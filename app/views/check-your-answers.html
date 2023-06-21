@@ -1,0 +1,137 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">
+        You are going to: {{  data['destination']   }}
+            </h1>
+ 
+
+      
+      <h2 class="govuk-heading-m">Personal details</h2>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Username"
+            },
+            value: {
+              text: data['user-name'] 
+            },
+            actions: {
+              items: [
+                {
+                  href: "/space-travel-form",
+                  text: "Change",
+                  visuallyHiddenText: "Question 2"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Address Line 1"
+            },
+            value: {
+              text:  data['address-line-1'] 
+             },
+            actions: {
+              items: [
+                {
+                  href: "/space-travel-form",
+                  text: "Change",
+                  visuallyHiddenText: "Question 3"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Address Line 2"
+            },
+            value: {
+              text:  data['address-line-2'] 
+             },
+            actions: {
+              items: [
+                {
+                  href: "/space-travel-form",
+                  text: "Change",
+                  visuallyHiddenText: "Question 4"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Town or City"
+            },
+            value: {
+              text:  data['address-town'] 
+             },
+            actions: {
+              items: [
+                {
+                  href: "/space-travel-form",
+                  text: "Change",
+                  visuallyHiddenText: "Question 5"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Postcode"
+            },
+            value: {
+              text:  data['address-postcode'] 
+             },
+            actions: {
+              items: [
+                {
+                  href: "/space-travel-form",
+                  text: "Change",
+                  visuallyHiddenText: "Question 6"
+                }
+              ]
+            }
+          }
+          
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m">
+        Now send your application
+      </h2>
+
+      <p>
+        By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.
+      </p>
+
+      <form action="/confirmation" method="post" novalidate>
+
+        {{ govukButton({
+          text: "Accept and send",
+          href: "/space-travel-confirmation"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
