@@ -4,5 +4,13 @@
 //
 
 window.GOVUKPrototypeKit.documentReady(() => {
+<<<<<<< HEAD
   // Add JavaScript here
 })
+=======
+  
+})
+ 
+
+
+>>>>>>> origin/master

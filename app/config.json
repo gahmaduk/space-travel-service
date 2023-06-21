@@ -1,3 +1,7 @@
 {
+<<<<<<< HEAD
   "serviceName": "Service name goes here"
+=======
+  "serviceName": "Space travel service"
+>>>>>>> origin/master
 }
